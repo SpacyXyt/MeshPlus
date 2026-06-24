@@ -1,0 +1,79 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  min-height: 100vh;
+  background: #0b0d10;
+  color: #f7f7f8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 48px 22px;
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+}
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.intro img { width: 58px; height: 58px; object-fit: contain; margin-bottom: 16px; }
+h1 { margin: 0 0 10px; font-size: 32px; line-height: 1.1; }
+p { margin: 0; color: rgba(255,255,255,.62); line-height: 1.45; }
+.card {
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  background: rgba(255,255,255,.045);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+label { display: flex; flex-direction: column; gap: 6px; }
+label span { color: rgba(255,255,255,.72); font-size: 13px; }
+.input {
+  width: 100%;
+  min-height: 40px;
+  padding: 0 11px;
+  border-radius: 7px;
+  border: 1px solid rgba(255,255,255,.22);
+  outline: none;
+  background: rgba(255,255,255,.06);
+  color: white;
+  font-size: 14px;
+}
+.input:focus { border-color: #3b82f6; background: rgba(255,255,255,.09); }
+.input::placeholder { color: rgba(255,255,255,.36); }
+.actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 4px; }
+.btn {
+  min-height: 38px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 7px;
+  background: rgba(255,255,255,.08);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover { background: rgba(255,255,255,.13); }
+.btn.primary { background: #2563eb; border-color: #2563eb; }
+.btn.primary:hover { background: #1d4ed8; }
+.btn.ghost { background: transparent; }
+.message { min-height: 18px; color: #fca5a5; font-size: 13px; }
+@media (max-width: 760px) {
+  .shell { grid-template-columns: 1fr; padding: 28px 14px; }
+  .split { grid-template-columns: 1fr; }
+  .actions { flex-direction: column-reverse; }
+  .btn { width: 100%; }
+}

@@ -1,0 +1,59 @@
+{
+  "manifest_version": 2,
+  "name": "MeshPlus",
+  "version": "1.0.5",
+  "icons": {
+    "48": "icons/logo.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "meshplus@www.devlynx.fr",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "default_icon": {
+      "48": "icons/logo.png"
+    },
+    "default_title": "Mesh+",
+    "default_popup": "popup/default.html"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "web_accessible_resources": [
+    "injected.js"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "meshplus.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "meshplus-openvnc.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

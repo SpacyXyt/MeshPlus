@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Installer MeshPlus</title>
+  <link rel="stylesheet" type="text/css" href="onboarding.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="intro">
+      <img src="../icons/logo.png" alt="">
+      <h1>Configurer MeshPlus</h1>
+      <p>Renseigne l'URL MeshCentral et le premier compte utilisé pour l'auto-login.</p>
+    </section>
+
+    <section class="card">
+      <label>
+        <span>URL MeshCentral</span>
+        <input class="input" type="text" id="baseUrl" placeholder="https://mesh.exemple.fr/">
+      </label>
+
+      <label>
+        <span>Plein écran</span>
+        <select class="input" id="fullscreenMode">
+          <option value="ask">Toujours demander</option>
+          <option value="always">Toujours</option>
+          <option value="never">Jamais</option>
+        </select>
+      </label>
+
+      <div class="split">
+        <label>
+          <span>Nom principal</span>
+          <input class="input" type="text" id="username" placeholder="ex: Stagiaire">
+        </label>
+        <label>
+          <span>Mot de passe</span>
+          <input class="input" type="password" id="password" placeholder="Mot de passe">
+        </label>
+      </div>
+
+      <label>
+        <span>Alternatives</span>
+        <input class="input" type="text" id="alternatives" placeholder="stagiaire, GRETA\Stagiaire">
+      </label>
+
+      <div class="actions">
+        <button class="btn ghost" type="button" id="skipBtn">Plus tard</button>
+        <button class="btn primary" type="button" id="finishBtn">Terminer</button>
+      </div>
+      <div class="message" id="message"></div>
+    </section>
+  </main>
+
+  <script src="onboarding.js"></script>
+</body>
+</html>

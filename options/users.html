@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MeshPlus - Paramètres</title>
+  <link rel="stylesheet" type="text/css" href="users.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="../icons/logo.png" alt="">
+      <div>
+        <h1>Paramètres</h1>
+        <p>Configuration MeshPlus et comptes d'auto-login MeshCentral.</p>
+        <div class="madeBy" id="devlynxBrand">
+          <img src="../icons/logo-devlynx.png" alt="">
+          <span>Made by Devlynx</span>
+        </div>
+      </div>
+    </div>
+    <div class="topActions">
+      <button class="btn ghost" type="button" id="backBtn">Retour</button>
+      <button class="btn primary" type="button" id="saveBtn">Sauvegarder</button>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Sections des paramètres">
+    <button class="tabBtn active" type="button" data-view="general">Général</button>
+    <button class="tabBtn" type="button" data-view="users">Utilisateurs</button>
+    <button class="tabBtn" type="button" data-view="credits">Crédits</button>
+  </nav>
+
+  <main class="layout">
+    <section class="view active" id="generalView">
+      <section class="panel generalPanel">
+        <div class="panelHeader">
+          <div>
+            <h2>Général</h2>
+            <span>Réglages appliqués à l'ouverture des postes.</span>
+          </div>
+        </div>
+
+        <div class="formGrid">
+          <label class="wide">
+            <span>Mesh URL</span>
+            <input class="input" type="text" id="baseUrl" placeholder="https://mesh.greta73-74.fr/">
+          </label>
+
+          <label class="wide">
+            <span>Plein écran</span>
+            <select class="input" id="fullscreenMode">
+              <option value="always">Toujours</option>
+              <option value="never">Jamais</option>
+              <option value="ask">Toujours demander</option>
+            </select>
+          </label>
+        </div>
+      </section>
+    </section>
+
+    <section class="view usersLayout" id="usersView">
+      <section class="panel listPanel">
+        <div class="panelHeader">
+          <div>
+            <h2>Liste</h2>
+            <span id="userCount">0 utilisateur</span>
+          </div>
+          <button class="btn small" type="button" id="addBtn">Ajouter</button>
+        </div>
+        <div class="userList" id="userList"></div>
+      </section>
+
+      <section class="panel editorPanel">
+        <div class="panelHeader">
+          <div>
+            <h2>Détails</h2>
+            <span id="editState">Sélectionne un utilisateur.</span>
+          </div>
+          <button class="btn danger small" type="button" id="deleteBtn">Supprimer</button>
+        </div>
+
+        <div class="formGrid">
+          <label>
+            <span>Nom principal</span>
+            <input class="input" type="text" id="username" placeholder="ex: Stagiaire">
+          </label>
+
+          <label>
+            <span>ID</span>
+            <input class="input" type="text" id="userId" placeholder="Généré automatiquement">
+          </label>
+
+          <label class="wide">
+            <span>Alternatives</span>
+            <input class="input" type="text" id="alternatives" placeholder="stagiaire, GRETA\Stagiaire">
+          </label>
+
+          <label class="wide">
+            <span>Mot de passe</span>
+            <input class="input" type="password" id="password" placeholder="Laisser vide si aucun">
+          </label>
+        </div>
+      </section>
+    </section>
+
+    <section class="view creditsLayout" id="creditsView">
+      <section class="panel creditsPanel">
+        <div class="panelHeader">
+          <div>
+            <h2>Crédits</h2>
+            <span>Liens du projet et contributeurs.</span>
+          </div>
+        </div>
+
+        <div class="creditsContent">
+          <div class="creditLinks">
+            <a class="creditLink" href="https://github.com/SpacyXyt/MeshPlus" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="creditLink" href="https://www.devlynx.fr" target="_blank" rel="noreferrer">devlynx.fr</a>
+          </div>
+
+          <div class="creditSpliter" aria-hidden="true"></div>
+
+          <div class="creditsGrid">
+            <section class="contributorsPanel" aria-label="Liste des contributeurs">
+              <h3>Contributeurs</h3>
+              <div class="contributorsList" id="contributorsList"></div>
+            </section>
+
+            <section class="contributorDetails" id="contributorDetails" aria-live="polite"></section>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="users.js"></script>
+</body>
+</html>

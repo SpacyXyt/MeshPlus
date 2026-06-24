@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <img src="../icons/logo.png">
+    <h4>MeshPlus</h4>
+    <div class="status" id="status"></div>
+  </div>
+
+  <div class="spliter"></div>
+
+  <div class="tabs">
+    <div class="tab settings visible" id="main">
+      <input class="btn primary" type="button" value="Paramètres" id="settingsBtn">
+      <input class="btn" type="button" value="Sélecteur" id="selectorsBtn">
+      <div class="madeBy" id="devlynxBrand">
+        <img src="../icons/logo-devlynx.png" alt="">
+        <span>Made by Devlynx</span>
+      </div>
+    </div>
+
+    <div class="tab selectors" id="selectors">
+      <span>Sélecteurs XPath</span>
+
+      <div class="selectorList" id="selectorList"></div>
+      <div class="selectorStatus" id="selectorStatus"></div>
+    </div>
+  </div>
+
+  <button class="btn backBtn" id="backBtn">Retour</button>
+  <button class="btn" id="save">Sauvegarder</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
